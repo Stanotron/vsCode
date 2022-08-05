@@ -1,0 +1,1 @@
+{"name":"Local: assemly","url":"f:\\vs code\\cpp\\assemly.cpp","tests":[{"id":1651302976718,"input":"4\n7\n5\n3\n1","output":"17\n11\n5\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\vs code\\cpp\\assemly.cpp","group":"local","local":true}

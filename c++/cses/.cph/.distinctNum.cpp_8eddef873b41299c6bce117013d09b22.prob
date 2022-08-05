@@ -1,0 +1,1 @@
+{"name":"Local: distinctNum","url":"e:\\vs code\\cpp\\cses\\distinctNum.cpp","tests":[{"id":1656956025115,"input":"5\n2 3 2 2 3","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\cpp\\cses\\distinctNum.cpp","group":"local","local":true}

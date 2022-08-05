@@ -1,0 +1,1 @@
+{"name":"Local: cpsExam","url":"f:\\vs code\\cpp\\cpsExam.cpp","tests":[{"id":1651327172677,"input":"5 4 3 2 1","output":"0\n1 5 4 3 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\vs code\\cpp\\cpsExam.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: ferriswheel","url":"e:\\vs code\\cpp\\cses\\ferriswheel.cpp","tests":[{"id":1658700800891,"input":"4 10\n7 2 3 9","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\cpp\\cses\\ferriswheel.cpp","group":"local","local":true}

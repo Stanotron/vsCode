@@ -1,0 +1,1 @@
+{"name":"Local: permutations","url":"e:\\vs code\\c++\\cses\\permutations.cpp","tests":[{"id":1659614440651,"input":"5","output":"4 2 5 3 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cses\\permutations.cpp","group":"local","local":true}

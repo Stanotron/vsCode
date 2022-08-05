@@ -1,0 +1,1 @@
+{"name":"Local: increasingArray","url":"e:\\vs code\\c++\\cses\\increasingArray.cpp","tests":[{"id":1659612050559,"input":"10\n6 10 4 10 2 8 9 2 7 7","output":"31"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cses\\increasingArray.cpp","group":"local","local":true}

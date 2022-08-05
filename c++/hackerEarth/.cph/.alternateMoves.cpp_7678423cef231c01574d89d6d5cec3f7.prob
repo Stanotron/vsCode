@@ -1,0 +1,1 @@
+{"name":"Local: alternateMoves","url":"e:\\vs code\\c++\\hackerEarth\\alternateMoves.cpp","tests":[{"id":1659468531691,"input":"3\n5 5 2\n7 3 4\n6 4 1","output":"1\n-1\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\hackerEarth\\alternateMoves.cpp","group":"local","local":true}

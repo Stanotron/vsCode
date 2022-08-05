@@ -1,0 +1,1 @@
+{"name":"Local: exp","url":"f:\\cpp\\exp.cpp","tests":[{"id":1642935394628,"input":"7\n15 18 17 10 14 7 25\n10","output":"15 10 7 14 18 17 25 \n15 14 7 18 17 25"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\cpp\\exp.cpp","group":"local","local":true}

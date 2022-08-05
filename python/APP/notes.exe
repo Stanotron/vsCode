@@ -1,0 +1,17 @@
+Concepts from oops:
+
+> Abstraction
+> Encapsulation
+> Class
+> Object
+> Inheritance
+> Polymorphism
+> Dynamic Binding
+> construction
+> destruction
+
+1. variables (int,float,double..)
+2. printing statement (with various cases like line,empty,space)
+3. conditional statement if, if else, else if
+4. loops (for, while, do while)
+5. functions, declaration, calling a function -> various types of function

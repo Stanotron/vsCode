@@ -1,0 +1,1 @@
+{"name":"Local: Sum2values","url":"e:\\vs code\\c++\\cses\\Sum2values.cpp","tests":[{"id":1659715795783,"input":"4 8\n2 7 5 1","output":"2 4"},{"id":1659727693592,"input":"3 2\n1 2 3","output":"IMPOSSIBLE"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cses\\Sum2values.cpp","group":"local","local":true}

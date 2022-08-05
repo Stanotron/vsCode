@@ -1,0 +1,6 @@
+BIOS - basic input output system execute MBR
+MBR - master boot record execute GRUB
+GRUB - grand unified boot loader execute kernel
+Kernel - kernel executes init
+Init - init executes run level program
+Run level - runlevel programs are executed from/etc

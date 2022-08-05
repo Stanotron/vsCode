@@ -1,0 +1,1 @@
+{"name":"Local: apartment","url":"e:\\vs code\\cpp\\cses\\apartment.cpp","tests":[{"id":1656957966996,"input":"10 10 10\n90 41 20 39 49 21 35 31 74 86\n14 24 24 7 82 85 82 4 60 95","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\cpp\\cses\\apartment.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: tobedel","url":"e:\\vs code\\cpp\\tobedel.cpp","tests":[{"id":1656960540038,"input":"7\n7 6 5 4 3 2 1\n6","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\cpp\\tobedel.cpp","group":"local","local":true}
