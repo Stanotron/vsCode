@@ -20,6 +20,7 @@ int main()
         auto itr2 = mll.rbegin();
         while(sum!=x){
             // cout<<(*itr).second <<" "<< (*itr2).second<<endl;
+            //cout<<endl;
             if((*itr).second == (*itr2).second) {
                 cout<<"IMPOSSIBLE";
                 return 0;
