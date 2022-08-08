@@ -1,0 +1,1 @@
+{"name":"Local: Wesam","url":"e:\\vs code\\c++\\hackerEarth\\Wesam.cpp","tests":[{"id":1659960348490,"input":"3\n.**\n.*.\n*..\n\n.**\n*..\n**.\n\n.*.\n**.\n**.","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\hackerEarth\\Wesam.cpp","group":"local","local":true}
