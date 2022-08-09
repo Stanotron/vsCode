@@ -30,6 +30,6 @@ int main()
             else itr = ++itr;
             c++;  
         }    
-        // cout<<min((*itr).second,(*itr2).second)<<" "<<max((*itr).second,(*itr2).second);
+         cout<<min((*itr).second,(*itr2).second)<<" "<<max((*itr).second,(*itr2).second);
     return 0;
 }
