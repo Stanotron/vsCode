@@ -1,1 +1,1 @@
-{"name":"Local: repetition","url":"e:\\vs code\\c++\\cses\\repetition.cpp","tests":[{"id":1659558396910,"input":"ATTCGGGA","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cses\\repetition.cpp","group":"local","local":true}
+{"name":"Local: repetition","url":"e:\\vs code\\c++\\cses\\repetition.cpp","tests":[{"id":1659558396910,"input":"ATTCGGGA","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cses\\repetition.cpp","group":"local","local":true}

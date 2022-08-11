@@ -16,18 +16,21 @@ int main()
             cin>>y;
             mll.insert({y,i});
         }
+        // for(auto x : mll){
+        //     cout<<x.first<<" "<<x.second<<endl;
+        // }
         auto itr = mll.begin();
         auto itr2 = mll.rbegin();
         while(c<=4){
             cout<<(*itr).second <<" "<< (*itr2).second<<endl;
+            sum = (*itr).first + (*itr2).first ;
+            cout<<sum<<endl;
+            //if(sum>x) itr2 = --itr2;
+            itr = ++itr;
             if((*itr).second == (*itr2).second) {
                 cout<<"IMPOSSIBLE";
                 return 0;
             }
-            sum = (*itr).first + (*itr2).first ;
-            cout<<sum<<endl;
-            if(sum>x) itr2 = --itr2;
-            else itr = ++itr;
             c++;  
         }    
          cout<<min((*itr).second,(*itr2).second)<<" "<<max((*itr).second,(*itr2).second);
