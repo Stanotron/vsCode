@@ -11,7 +11,7 @@ int main()
     fast_io;
     ll t;
     t = 1;
-    // cin>>t;
+    cin>>t;
     while(t--){
         map<long double,ll> mll;
         ll n;
