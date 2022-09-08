@@ -1,0 +1,1 @@
+{"name":"Local: ll","url":"e:\\vs code\\c++\\cps\\ll.cpp","tests":[{"id":1662545466226,"input":"5\n1 2 3 4 5","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cps\\ll.cpp","group":"local","local":true}
