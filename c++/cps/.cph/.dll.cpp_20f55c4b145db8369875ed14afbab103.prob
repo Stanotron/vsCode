@@ -1,0 +1,1 @@
+{"name":"Local: dll","url":"e:\\vs code\\c++\\cps\\dll.cpp","tests":[{"id":1663149455948,"input":"5\n15 6 1 5 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cps\\dll.cpp","group":"local","local":true}
