@@ -57,15 +57,15 @@ void size(){
     cout<<endl<<d;
 }
 
-// void sort(int size){
-//     int s = size;
-//     node * temp = start;
-//     fr(i,0,s){
-//         fr(j,0,s){
-//             if()
-//         }
-//     }
-// }
+void sort(int size){
+    int s = size;
+    node * temp = start;
+    fr(i,0,s){
+        fr(j,0,s){
+            if()
+        }
+    }
+}
 
 int main()
 {
