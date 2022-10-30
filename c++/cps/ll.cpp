@@ -14,17 +14,17 @@ struct node{
 node* start = NULL;
 
 void insert(int val){
-    node* p = new node();
-    p->data = val;
+    node* t = new node();
+    t->data = val;
     if(start==NULL){
-        start = p;
+        start = t;
         return;
     }
     node* temp = start;
     while(temp->next!=NULL){
         temp = temp->next;
     }
-    temp->next = p;
+    temp->next = t;
 
 }
 
