@@ -1,46 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef pair<int,string> pis;
-void printmap(map<int,string> &m){
-    cout<<m.size()<<endl;
-    for(auto &i : m){
-        cout<<i.first<<"  "<<i.second<<endl;
+// void printmap(map<int,string> &m){
+//     cout<<m.size()<<endl;
+//     for(auto &i : m){
+//         cout<<i.first<<"  "<<i.second<<endl;
+//     }
+// }
+bool f(int x, int y)
+{
+    return x > y;
+}
+void vectordemo(){
+    vector<int> a = {11, 35, 46, 2};
+    cout << a[1] << endl;
+    sort(a.begin(), a.end());
+    bool p = binary_search(a.begin(), a.end(), 45);
+    cout
+        << p;
+    a.push_back(15);
+    cout << endl;
+    a.push_back(15);
+    a.push_back(15);
+    a.push_back(15);
+    a.push_back(67);
+    sort(a.begin(), a.end());
+    for (int x : a)
+    {
+        cout << x << " ";
+    }
+    vector<int>::iterator it = lower_bound(a.begin(), a.end(), 15);
+    vector<int>::iterator it2 = upper_bound(a.begin(), a.end(), 67);
+    cout << endl;
+    cout << *it << " " << *it2;
+    cout << endl;
+    cout << it2 - it << endl;
+    sort(a.begin(), a.end(), f);
+    for (int x : a)
+    {
+        cout << x << " ";
     }
 }
-// bool f(int x, int y)
-// {
-//     return x > y;
-// }
-// void vectordemo(){
-//     vector<int> a = {11, 35, 46, 2};
-//     cout << a[1] << endl;
-//     sort(a.begin(), a.end());
-//     bool p = binary_search(a.begin(), a.end(), 45);
-//     cout
-//         << p;
-//     a.push_back(15);
-//     cout << endl;
-//     a.push_back(15);
-//     a.push_back(15);
-//     a.push_back(15);
-//     a.push_back(67);
-//     sort(a.begin(), a.end());
-//     for (int x : a)
-//     {
-//         cout << x << " ";
-//     }
-//     vector<int>::iterator it = lower_bound(a.begin(), a.end(), 15);
-//     vector<int>::iterator it2 = upper_bound(a.begin(), a.end(), 15);
-//     cout << endl;
-//     cout << *it << " " << *it2;
-//     cout << endl;
-//     cout << it2 - it << endl;
-//     sort(a.begin(), a.end(), f);
-//     for (int x : a)
-//     {
-//         cout << x << " ";
-//     }
-// }
 // void setdemo(){
 //     set<int> s = {23,12,3,19};
 //     for(int x : s){
@@ -50,6 +50,7 @@ void printmap(map<int,string> &m){
 //     cout<<endl<<*f;
 // }
 int main(){
+    vectordemo();}
 //    setdemo();
 //  pis p1 = {1,"abs"};
 //  cout<<p1.first<<" " <<p1.second; 
@@ -173,7 +174,7 @@ int main(){
 // }
 // cout<<total;
 // }  
-#include <bits/stdc++.h>using namespace std;int main() {int t;cin >>t; while(t--){int n,m;cin>>n>>m;unordered_set<long long int> s;int count=0;for(int i=0;i<(n+m);i++ ){long long int a;cin>>a;if(count>=n){auto it=s.find(a);if(it!=s.end()){cout <<"YES"<<endl;}else{cout <<"NO" <<endl;}}s.insert(a);count++;}}} 
-return 0;
-}
+// #include <bits/stdc++.h>using namespace std;int main() {int t;cin >>t; while(t--){int n,m;cin>>n>>m;unordered_set<long long int> s;int count=0;for(int i=0;i<(n+m);i++ ){long long int a;cin>>a;if(count>=n){auto it=s.find(a);if(it!=s.end()){cout <<"YES"<<endl;}else{cout <<"NO" <<endl;}}s.insert(a);count++;}}} 
+// return 0;
+// }
 

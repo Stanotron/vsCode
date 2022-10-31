@@ -1,0 +1,1 @@
+{"name":"Local: helpjohn","url":"e:\\vs code\\c++\\hackerEarth\\helpjohn.cpp","tests":[{"id":1667205690495,"input":"5\n1\n4\n2\n3\n7","output":"-1 -1\n1 -1\n1 4\n2 4\n4 -1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\hackerEarth\\helpjohn.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: kjump","url":"e:\\vs code\\c++\\hackerEarth\\kjump.cpp","tests":[{"id":1667213394244,"input":"2\n7\n1 3 1 4 5 7 10","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\hackerEarth\\kjump.cpp","group":"local","local":true}
