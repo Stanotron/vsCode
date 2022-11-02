@@ -7,7 +7,79 @@
     
 using namespace std;
 
+//Quicksort
 
+int partition(int *arr, int start, int end)
+{
+  int temp, k = start, pivot = arr[end];
+  for (int i = start; i < end; i++)
+  {
+    if (arr[i] <= pivot)
+    {
+      temp = arr[k];
+      arr[k] = arr[i];
+      arr[i] = temp;
+      k++;
+    }
+  }
+  temp = arr[k];
+  arr[k] = arr[end];
+  arr[end] = temp;
+  return k;
+}
+void quicksort(int *arr, int start, int end)
+{
+  if (start < end)
+  {
+    int pi = partition(arr, start, end);
+    quicksort(arr, start, pi - 1);
+    quicksort(arr, pi + 1, end);
+  }
+}
+
+//Mergesort
+
+void merge(int left[], int right[], int a[], int nl, int nr)
+{
+  int i = 0, k = 0, l = 0;
+  while (i < nl && k < nr)
+  {
+    if (left[i] <= right[k])
+    {
+      a[l] = left[i];
+      i++;
+    }
+    else
+    {
+      a[l] = right[k];
+      k++;
+    }
+    l++;
+  }
+  while (i < nl)
+    a[l++] = left[i++];
+  while (k < nr)
+    a[l++] = right[k++];
+}
+void mergesort(int a[], int n)
+{
+  int i;
+  if (n < 2)
+    return;
+  int mid = n / 2;
+  int left[mid], right[n - mid];
+  for (i = 0; i < mid; i++)
+  {
+    left[i] = a[i];
+  }
+  for (i = 0; i < n - mid; i++)
+  {
+    right[i] = a[i + mid];
+  }
+  mergesort(left, mid);
+  mergesort(right, n - mid);
+  merge(left, right, a, mid, n - mid);
+}
 
 //Question 4
 
@@ -59,6 +131,22 @@ int main()
     t = 1;
     while(t--){
         solve();
+
+        int i, n, d;
+        cin >> n;
+        int a[n];
+        for (i = 0; i < n; i++){
+            cin >> d;
+            a[i] = d;
+        }
+        mergesort(a, n);
+        for (i = 0; i < n; i++){
+            cout << a[i] << ",";
+        }
+        quicksort(a, 0,n-1);
+        for (i = 0; i < n; i++){
+            cout << a[i] << " ";
+        }
     }
     return 0;
 }
