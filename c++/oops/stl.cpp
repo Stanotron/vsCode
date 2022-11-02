@@ -40,6 +40,7 @@ void vectordemo(){
     {
         cout << x << " ";
     }
+    cout<<endl<<pow(2.1,3);
 }
 // void setdemo(){
 //     set<int> s = {23,12,3,19};
