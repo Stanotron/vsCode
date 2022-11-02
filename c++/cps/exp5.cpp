@@ -7,37 +7,40 @@
     
 using namespace std;
 
-//Quicksort
+// Question 1 : Linear Search and Binary Search
 
-int partition(int *arr, int start, int end)
-{
-  int temp, k = start, pivot = arr[end];
-  for (int i = start; i < end; i++)
+// Linear Search
+
+int linearSearch(int *a,int n,int val){
+  int i;
+  for ( i = 0; i < n; i++)
   {
-    if (arr[i] <= pivot)
-    {
-      temp = arr[k];
-      arr[k] = arr[i];
-      arr[i] = temp;
-      k++;
+    if(a[i]==val)
+    return i;
+  }
+  return -1;
+  
+}
+
+// Binary Search
+
+int binarySearch(int *a,int n,int val){
+  int low=0,mid,high=n-1;
+  bool value = false;
+  while(low<=high && value!=true){
+  mid = (low+high)/2;
+    if(a[mid]==val) value = true;
+    else if(a[mid]>val){
+      high = mid-1;
     }
+    else low = mid+1;
   }
-  temp = arr[k];
-  arr[k] = arr[end];
-  arr[end] = temp;
-  return k;
-}
-void quicksort(int *arr, int start, int end)
-{
-  if (start < end)
-  {
-    int pi = partition(arr, start, end);
-    quicksort(arr, start, pi - 1);
-    quicksort(arr, pi + 1, end);
-  }
+  if(value==true)
+  return mid;
+  else return -1;
 }
 
-//Mergesort
+// Question 2 : Mergesort
 
 void merge(int left[], int right[], int a[], int nl, int nr)
 {
@@ -81,7 +84,37 @@ void mergesort(int a[], int n)
   merge(left, right, a, mid, n - mid);
 }
 
-//Question 4
+// Question 3 : Quicksort
+
+int partition(int *arr, int start, int end)
+{
+  int temp, k = start, pivot = arr[end];
+  for (int i = start; i < end; i++)
+  {
+    if (arr[i] <= pivot)
+    {
+      temp = arr[k];
+      arr[k] = arr[i];
+      arr[i] = temp;
+      k++;
+    }
+  }
+  temp = arr[k];
+  arr[k] = arr[end];
+  arr[end] = temp;
+  return k;
+}
+void quicksort(int *arr, int start, int end)
+{
+  if (start < end)
+  {
+    int pi = partition(arr, start, end);
+    quicksort(arr, start, pi - 1);
+    quicksort(arr, pi + 1, end);
+  }
+}
+
+//Question 4 : Moves
 
 int getSum(string s)
 {
@@ -120,7 +153,7 @@ void solve()
     int n = str.size() / 2;
     string a = str.substr(0, n), b = str.substr(n);
     int ans = helper(a, b);
-    cout << ans;
+    cout <<"Moves : " <<ans;
 }
 
 
@@ -132,21 +165,31 @@ int main()
     while(t--){
         solve();
 
-        int i, n, d;
+        int i, n, d, f;
         cin >> n;
         int a[n];
         for (i = 0; i < n; i++){
             cin >> d;
             a[i] = d;
         }
+        //mergesort
         mergesort(a, n);
+        cout<<endl<<"Array after Mergesort : ";
         for (i = 0; i < n; i++){
-            cout << a[i] << ",";
+            cout<< a[i] << ",";
         }
+        //quicksort
         quicksort(a, 0,n-1);
+        cout<<endl<<"Array after Quicksort : ";
         for (i = 0; i < n; i++){
-            cout << a[i] << " ";
+            cout<< a[i] << ",";
         }
+
+        cin>>f;
+        //linear search
+        cout<<endl<<"Index of "<<f<<" by linear search : "<<linearSearch(a,n,f);
+        //binary search
+        cout<<endl<<"Index of "<<f<<" by binary search : "<<binarySearch(a,n,f);
     }
     return 0;
 }
