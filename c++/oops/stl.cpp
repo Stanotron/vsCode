@@ -7,41 +7,41 @@ typedef pair<int,string> pis;
 //         cout<<i.first<<"  "<<i.second<<endl;
 //     }
 // }
-bool f(int x, int y)
-{
-    return x > y;
-}
-void vectordemo(){
-    vector<int> a = {11, 35, 46, 2};
-    cout << a[1] << endl;
-    sort(a.begin(), a.end());
-    bool p = binary_search(a.begin(), a.end(), 45);
-    cout
-        << p;
-    a.push_back(15);
-    cout << endl;
-    a.push_back(15);
-    a.push_back(15);
-    a.push_back(15);
-    a.push_back(67);
-    sort(a.begin(), a.end());
-    for (int x : a)
-    {
-        cout << x << " ";
-    }
-    vector<int>::iterator it = lower_bound(a.begin(), a.end(), 15);
-    vector<int>::iterator it2 = upper_bound(a.begin(), a.end(), 67);
-    cout << endl;
-    cout << *it << " " << *it2;
-    cout << endl;
-    cout << it2 - it << endl;
-    sort(a.begin(), a.end(), f);
-    for (int x : a)
-    {
-        cout << x << " ";
-    }
-    cout<<endl<<pow(2.1,3);
-}
+// bool f(int x, int y)
+// {
+//     return x > y;
+// }
+// void vectordemo(){
+//     vector<int> a = {11, 35, 46, 2};
+//     cout << a[1] << endl;
+//     sort(a.begin(), a.end());
+//     bool p = binary_search(a.begin(), a.end(), 45);
+//     cout
+//         << p;
+//     a.push_back(15);
+//     cout << endl;
+//     a.push_back(15);
+//     a.push_back(15);
+//     a.push_back(15);
+//     a.push_back(67);
+//     sort(a.begin(), a.end());
+//     for (int x : a)
+//     {
+//         cout << x << " ";
+//     }
+//     vector<int>::iterator it = lower_bound(a.begin(), a.end(), 15);
+//     vector<int>::iterator it2 = upper_bound(a.begin(), a.end(), 67);
+//     cout << endl;
+//     cout << *it << " " << *it2;
+//     cout << endl;
+//     cout << it2 - it << endl;
+//     sort(a.begin(), a.end(), f);
+//     for (int x : a)
+//     {
+//         cout << x << " ";
+//     }
+//     cout<<endl<<pow(2.1,3);
+// }
 // void setdemo(){
 //     set<int> s = {23,12,3,19};
 //     for(int x : s){
