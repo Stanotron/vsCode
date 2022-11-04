@@ -51,7 +51,7 @@ typedef pair<int,string> pis;
 //     cout<<endl<<*f;
 // }
 int main(){
-    vectordemo();}
+    // vectordemo();}
 //    setdemo();
 //  pis p1 = {1,"abs"};
 //  cout<<p1.first<<" " <<p1.second; 
