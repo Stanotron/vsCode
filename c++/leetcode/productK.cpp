@@ -40,7 +40,6 @@ int main()
     ll t;
     t = 1;
     vector<int> vi {-1,1,0,-3,3},sol;
-    // cin>>t;
     while(t--){
         sol = productExceptSelf(vi);
         // for(auto x : sol)
