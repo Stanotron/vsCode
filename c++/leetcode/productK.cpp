@@ -38,14 +38,14 @@ int main()
 {
     fast_io;
     ll t;
-    t = 1;
+    // t = 1;
     vector<int> vi {0,1,2,4,8,5,6,7,9,3,55,88,77,99,999999999},sol;
-    while(t--){
+    // while(t--){
         sol = productExceptSelf(vi);
         // for(auto x : sol)
         // {
         //     cout<<x<<" ";
         // }
-    }
+    // }
     return 0;
 }
