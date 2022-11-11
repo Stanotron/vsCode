@@ -26,7 +26,7 @@ int main()
     t = 1;
     // cin>>t;
     while(t--){
-        vector<int> height {1,8,6,2,5,4,8,3,7};
+        vector<int> height {1,8,6,2,5,4,8,3};
         int max = maxArea(height);
         cout<<max;
     }
