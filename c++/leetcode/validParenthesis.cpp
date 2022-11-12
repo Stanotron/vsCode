@@ -14,9 +14,7 @@ public:
         if(s[0]==')' || s[0]=='}' || s[0]==']') return false;
         for(auto x : s){
             if(x=='(' || x=='{' || x=='[') sc.push(x);
-            else if (x==')' && sc.top()!='(') 
-            else if (x=='}' && sc.top()!='{') 
-            else if (x==']' && sc.top()!='[') 
+            else if (x==')' && sc.top()!='(') return false;
             else sc.pop();
         }
         return sc.empty();
