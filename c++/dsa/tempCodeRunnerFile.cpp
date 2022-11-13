@@ -19,6 +19,7 @@ void push(int d){
     p2->link = p1;
 }
 void display(){
+    cout<<start->data;
     while(start!=NULL){
         cout<<"->"<<start->data;
         start=start->link;
