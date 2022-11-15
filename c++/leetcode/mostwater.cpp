@@ -7,7 +7,7 @@
     
 using namespace std;
 
-int maxArea(vector<int>& height) {
+int maxarea(vector<int>& height) {
         int area = 0, i = 0;
         int end = height.size()-1;
         while(end>i){
@@ -27,7 +27,7 @@ int main()
     // cin>>t;
     while(t--){
         vector<int> height {1,8,6,2,5,4,8,3};
-        int max = maxArea(height);
+        int max = maxarea(height);
         cout<<max;
     }
     return 0;
