@@ -14,7 +14,7 @@ int main()
     // cin>>t;
     while(t--){
         string str = "javatpoint";  
-        cout<< "position is :" << str.find('z');  
+        cout<< "position is :" << str.find('X');  
     }
     return 0;
 }
