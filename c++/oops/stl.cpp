@@ -17,7 +17,7 @@ void vectordemo(){
     sort(a.begin(), a.end());
     bool p = binary_search(a.begin(), a.end(), 45);
     cout<< p;
-    a.push_back(20);
+    a.push_back(15);
     cout << endl;
     a.push_back(15);
     a.push_back(15);
