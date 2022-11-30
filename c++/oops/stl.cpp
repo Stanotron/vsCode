@@ -12,7 +12,7 @@ bool f(int x, int y)
     return x > y;
 }
 void vectordemo(){
-    vector<int> a = {11, 35, 46, 2};
+    vector<int> a = {1, 35, 46, 2};
     cout << *--a.end() << endl;
     sort(a.begin(), a.end());
     bool p = binary_search(a.begin(), a.end(), 45);
