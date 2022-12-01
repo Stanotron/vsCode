@@ -2,11 +2,10 @@ import socket
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-host = "120.0.0.1"
-port = 12345
+port = 8000
 
-s.connect((host,port))
+s.connect((socket.gethostname(),port))
 
 print(s.recv(1024).decode())
-
 s.close()
+
