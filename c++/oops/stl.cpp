@@ -19,7 +19,7 @@ void vectordemo(){
     cout<< p;
     a.push_back(20);
     cout << endl;
-    a.push_back(15);
+    a.push_back(20);
     a.push_back(15);
     a.push_back(15);
     a.push_back(67);
