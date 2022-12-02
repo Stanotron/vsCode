@@ -1,6 +1,7 @@
 import socket
+import time
 
-s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM) 
 
 host = socket.gethostname()
 port = 8000
@@ -11,4 +12,3 @@ while True:
     data,addr = s.recvfrom(1024)
     print(data)
 
-s.close()

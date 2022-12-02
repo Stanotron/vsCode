@@ -11,7 +11,9 @@ s.listen(5)
 
 while True:
     c,addr = s.accept()
-    c.send("hello".encode())
-    c.close()
-    break
-s.close()
+    filename = 'mytext.txt'
+    f = open(filename,'rb')
+    I = f.read(1024)
+    while (I):
+        c.send(I)
+        c.close()

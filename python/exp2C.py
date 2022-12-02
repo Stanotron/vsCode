@@ -8,3 +8,5 @@ port = 8000
 message = "shit".encode()
 
 s.sendto(message,(host,port))
+
+s.close()
