@@ -13,7 +13,7 @@ while True:
     c,addr = s.accept()
     filename = 'mytext.txt'
     f = open(filename,'rb')
-    I = f.read(1024)
+    I = f.read()
     while (I):
         c.send(I)
         c.close()
