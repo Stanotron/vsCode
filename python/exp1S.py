@@ -7,7 +7,7 @@ port = 9000
 
 s.bind((host,port))
 
-s.listen(3)
+s.listen(5)
 
 while True:
     c,addr = s.accept()
