@@ -3,7 +3,7 @@ import socket
 s = socket.socket()
 
 host = socket.gethostname()
-port = 9000
+port = 8000
 
 s.bind((host,port))
 
