@@ -29,6 +29,7 @@ node *insert(node *root, int d)
         root->right = insert(root->right, d);
     return root;
 }
+
 void find(node *root, int d)
 {
     bool ans = false;
@@ -65,9 +66,9 @@ int main()
         root = insert(root, d);
     }
     print(root);
-    int v;
+    int d;
     cout << endl;
-    cin >> v;
-    find(root, v);
+    cin >> d;
+    find(root, d);
     return 0;
 }
