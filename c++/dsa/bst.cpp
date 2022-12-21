@@ -66,9 +66,9 @@ int main()
         root = insert(root, d);
     }
     print(root);
-    int d;
+    int v;
     cout << endl;
-    cin >> d;
-    find(root, d);
+    cin >> v;
+    find(root, v);
     return 0;
 }
