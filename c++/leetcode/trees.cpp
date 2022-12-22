@@ -20,14 +20,15 @@ using namespace std;
 
 class Solution {
 public:
-    bool isSameTree(TreeNode* p, TreeNode* q) {
-        if(p==NULL && q==NULL){
-            return true;
-        }
-        else if(p!=NULL && q!=NULL && p->val == q->val){
-            return ( isSameTree(p->left,q->left) && isSameTree(p->right,q->right));
-        }
+    bool check(TreeNode* p, TreeNode* q){
+        if(p==NULL && q==NULL ) return true;
+        else if(p!=NULL && q!=NULL && p->val==q->val) return (check(p->left, q->left) && check(p->right, q->right) );
         else return false;
+    }
+
+    bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+        if(!root) return !subRoot;
+        return (check(root,subRoot) || isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot));
     }
 };
 
