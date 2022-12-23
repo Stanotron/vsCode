@@ -20,8 +20,7 @@ using namespace std;
 
 class Solution {
 public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        bool find(TreeNode *root, int value){
+    bool find(TreeNode *root, int value){
         if(root==NULL) return false;
         if(root != NULL && root->val==value){
             return true;
@@ -36,7 +35,6 @@ public:
         if(root->val < p->val && root->val < q->val) return lowestCommonAncestor(root->right,p,q);
         else if(root->val > p->val && root->val > q->val) return lowestCommonAncestor(root->left,p,q);
         else return root;
-    }
     }
 };
 
