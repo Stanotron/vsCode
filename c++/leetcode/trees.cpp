@@ -20,15 +20,23 @@ using namespace std;
 
 class Solution {
 public:
-    bool check(TreeNode* p, TreeNode* q){
-        if(p==NULL && q==NULL ) return true;
-        else if(p!=NULL && q!=NULL && p->val==q->val) return (check(p->left, q->left) && check(p->right, q->right) );
-        else return false;
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        bool find(TreeNode *root, int value){
+        if(root==NULL) return false;
+        if(root != NULL && root->val==value){
+            return true;
+        }
+        return ( find(root->left,value)||find(root->right,value) );
     }
 
-    bool isSubtree(TreeNode* root, TreeNode* subRoot) {
-        if(!root) return !subRoot;
-        return (check(root,subRoot) || isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot));
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(root==p && find(root,q->val)) return p;
+        if(root==q && find(root,p->val)) return q;
+
+        if(root->val < p->val && root->val < q->val) return lowestCommonAncestor(root->right,p,q);
+        else if(root->val > p->val && root->val > q->val) return lowestCommonAncestor(root->left,p,q);
+        else return root;
+    }
     }
 };
 
