@@ -20,21 +20,32 @@ using namespace std;
 
 class Solution {
 public:
-    bool find(TreeNode *root, int value){
-        if(root==NULL) return false;
-        if(root != NULL && root->val==value){
-            return true;
+
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        if (!root) return {};
+        vector<vector<int>> vvi {{root->val}};
+        vector<int> vi;
+        queue<TreeNode *> qt1;
+        if(root) qt1.push(root);
+        while(!qt1.empty()){
+            int size = qt1.size();
+            for(int i = 0; i < size; i++){
+                if(qt1.front()->left){
+                    qt1.push(qt1.front()->left);
+                    vi.push_back(qt1.front()->left->val);
+                } 
+                if(qt1.front()->right){
+                    qt1.push(qt1.front()->right);
+                    vi.push_back(qt1.front()->right->val);
+                } 
+                qt1.pop();
+            }
+            if(vi.size()>0){
+                vvi.push_back(vi);
+            }
+            vi.clear();
         }
-        return ( find(root->left,value)||find(root->right,value) );
-    }
-
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if(root==p && find(root,q->val)) return p;
-        if(root==q && find(root,p->val)) return q;
-
-        if(root->val < p->val && root->val < q->val) return lowestCommonAncestor(root->right,p,q);
-        else if(root->val > p->val && root->val > q->val) return lowestCommonAncestor(root->left,p,q);
-        else return root;
+        return vvi;
     }
 };
 
