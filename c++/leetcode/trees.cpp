@@ -20,12 +20,12 @@ using namespace std;
 
 class Solution {
 public:
-    bool find(TreeNode *root, int val){
+    bool find(TreeNode *root, int value){
         if(root==NULL) return false;
-        if(root != NULL && root->val==val){
+        if(root != NULL && root->val==value){
             return true;
         }
-        return ( find(root->left,val)||find(root->right,val) );
+        return ( find(root->left,value)||find(root->right,value) );
     }
 
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
