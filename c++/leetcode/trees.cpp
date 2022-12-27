@@ -21,23 +21,16 @@ using namespace std;
 class Solution {
 public:
     vector<int> vi{};
-
+    
     void solve(TreeNode *root){
         if (root == NULL) return ;
         solve(root->left);
         vi.push_back(root->val);
         solve(root->right);
     }
-
-    bool isValidBST(TreeNode* root) {
-        if(root==NULL) return true;
+    int kthSmallest(TreeNode* root, int k) {
         solve(root);
-        for(int i = 1; i<vi.size(); i++)
-            {
-                if(vi[i-1] >= vi[i]) return false;
-                else continue;
-            }
-        return true;
+        return vi[k-1];
     }
 };
 
