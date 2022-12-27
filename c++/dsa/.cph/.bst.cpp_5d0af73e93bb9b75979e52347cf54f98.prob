@@ -1,0 +1,1 @@
+{"name":"Local: bst","url":"e:\\vs code\\c++\\dsa\\bst.cpp","tests":[{"id":1672141471719,"input":"5\n1 2 3 4 5","output":"1 2 3 4 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\dsa\\bst.cpp","group":"local","local":true}

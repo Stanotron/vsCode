@@ -20,32 +20,24 @@ using namespace std;
 
 class Solution {
 public:
+    vector<int> vi{};
 
-    vector<vector<int>> levelOrder(TreeNode* root) {
-        if (!root) return {};
-        vector<vector<int>> vvi {{root->val}};
-        vector<int> vi;
-        queue<TreeNode *> qt1;
-        if(root) qt1.push(root);
-        while(!qt1.empty()){
-            int size = qt1.size();
-            for(int i = 0; i < size; i++){
-                if(qt1.front()->left){
-                    qt1.push(qt1.front()->left);
-                    vi.push_back(qt1.front()->left->val);
-                } 
-                if(qt1.front()->right){
-                    qt1.push(qt1.front()->right);
-                    vi.push_back(qt1.front()->right->val);
-                } 
-                qt1.pop();
+    void solve(TreeNode *root){
+        if (root == NULL) return ;
+        solve(root->left);
+        vi.push_back(root->val);
+        solve(root->right);
+    }
+
+    bool isValidBST(TreeNode* root) {
+        if(root==NULL) return true;
+        solve(root);
+        for(int i = 1; i<vi.size(); i++)
+            {
+                if(vi[i-1] >= vi[i]) return false;
+                else continue;
             }
-            if(vi.size()>0){
-                vvi.push_back(vi);
-            }
-            vi.clear();
-        }
-        return vvi;
+        return true;
     }
 };
 

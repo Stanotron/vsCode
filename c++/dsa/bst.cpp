@@ -54,7 +54,9 @@ void print(node *root)
     }
     cout << root->data << " ";
     print(root->left);
+    
     print(root->right);
+    
 }
 int main()
 {
@@ -66,9 +68,9 @@ int main()
         root = insert(root, d);
     }
     print(root);
-    int d;
-    cout << endl;
-    cin >> d;
-    find(root, d);
+    // int c;
+    // cout << endl;
+    // cin >> c;
+    // find(root, c);
     return 0;
 }
