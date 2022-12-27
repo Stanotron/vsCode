@@ -28,9 +28,9 @@ public:
         vi.push_back(root->val);
         solve(root->right);
     }
-    int kthSmallest(TreeNode* root, int k) {
+    int kthSmallest(TreeNode* root, int val) {
         solve(root);
-        return vi[k-1];
+        return vi[val-1];
     }
 };
 
