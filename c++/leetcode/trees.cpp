@@ -27,15 +27,16 @@ public:
         copy(start, end, result.begin());
         return result;
     }
-    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
         TreeNode * root = new TreeNode();
-        if(preorder.empty() || inorder.empty()) return NULL;
-        root->val = preorder[0];
-        int mid = find(inorder.begin(),inorder.end(), preorder[0]) -  inorder.begin();
-        vector<int> inleft = slicing(inorder,0,mid-1), preleft= slicing(preorder,1,mid);
-        vector<int> inright = slicing(inorder,mid+1,inorder.size()-1), preright= slicing(preorder,mid+1,preorder.size()-1);
-        root->left = buildTree(preleft,inleft);
-        root->right = buildTree(preright,inright);
+        if(postorder.empty() || inorder.empty()) return NULL;
+        root->val = postorder.back();
+        int mid = find(inorder.begin(),inorder.end(), postorder.back()) - inorder.begin();
+        vector<int> inleft = slicing(inorder,0,mid-1), postleft= slicing(postorder,0,mid-1);
+        vector<int> inright = slicing(inorder,mid+1,inorder.size()-1), postright= slicing(postorder,mid,postorder.size()-2);
+        root->left = buildTree(inleft,postleft);
+        root->right = buildTree(inright,postright);
         return root;
     }
 };
