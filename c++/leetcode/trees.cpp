@@ -20,17 +20,23 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> vi{};
-    
-    void solve(TreeNode *root){
-        if (root == NULL) return ;
-        solve(root->left);
-        vi.push_back(root->val);
-        solve(root->right);
+    vector<int> slicing(vector<int> arr, int X, int Y){
+        auto start = arr.begin() + X;
+        auto end = arr.begin() + Y + 1;
+        vector<int> result(Y - X + 1);
+        copy(start, end, result.begin());
+        return result;
     }
-    int kthSmallest(TreeNode* root, int val) {
-        solve(root);
-        return vi[val-1];
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        TreeNode * root = new TreeNode();
+        if(preorder.empty() || inorder.empty()) return NULL;
+        root->val = preorder[0];
+        int mid = find(inorder.begin(),inorder.end(), preorder[0]) -  inorder.begin();
+        vector<int> inleft = slicing(inorder,0,mid-1), preleft= slicing(preorder,1,mid);
+        vector<int> inright = slicing(inorder,mid+1,inorder.size()-1), preright= slicing(preorder,mid+1,preorder.size()-1);
+        root->left = buildTree(preleft,inleft);
+        root->right = buildTree(preright,inright);
+        return root;
     }
 };
 
