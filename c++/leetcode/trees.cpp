@@ -20,24 +20,40 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> slicing(vector<int> arr, int X, int Y){
-        auto start = arr.begin() + X;
-        auto end = arr.begin() + Y + 1;
-        vector<int> result(Y - X + 1);
-        copy(start, end, result.begin());
-        return result;
-    }
-
-    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
-        TreeNode * root = new TreeNode();
-        if(postorder.empty() || inorder.empty()) return NULL;
-        root->val = postorder.back();
-        int mid = find(inorder.begin(),inorder.end(), postorder.back()) - inorder.begin();
-        vector<int> inleft = slicing(inorder,0,mid-1), postleft= slicing(postorder,0,mid-1);
-        vector<int> inright = slicing(inorder,mid+1,inorder.size()-1), postright= slicing(postorder,mid,postorder.size()-2);
-        root->left = buildTree(inleft,postleft);
-        root->right = buildTree(inright,postright);
-        return root;
+    bool flag = false;
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        if (!root) return {};
+        vector<vector<int>> vvi {{root->val}};
+        vector<int> vi;
+        queue<TreeNode *> qt1;
+        if(root) qt1.push(root);
+        while(!qt1.empty()){
+            int size = qt1.size();
+            for(int i = 0; i < size; i++){
+                if(qt1.front()->left){
+                    qt1.push(qt1.front()->left);
+                    vi.push_back(qt1.front()->left->val);
+                } 
+                if(qt1.front()->right){
+                    qt1.push(qt1.front()->right);
+                    vi.push_back(qt1.front()->right->val);
+                } 
+                qt1.pop();
+            }
+            if(vi.size()>0){
+                if(flag){
+                    vvi.push_back(vi);
+                    flag = false;
+                }
+                else{
+                    reverse(vi.begin(),vi.end());
+                    vvi.push_back(vi);
+                    flag = true;
+                }
+            }
+            vi.clear();
+        }
+        return vvi; 
     }
 };
 
