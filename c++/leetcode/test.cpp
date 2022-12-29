@@ -13,8 +13,10 @@ int main()
     t = 1;
     // cin>>t;
     while(t--){
-        string str = "javatpoint";  
-        cout<< "position is :" << str.find('X');  
+        string str = "javatpoint";
+        char x = '1';  
+        str.push_back(x);
+        cout<<str;
     }
     return 0;
 }
