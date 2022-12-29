@@ -20,8 +20,7 @@ using namespace std;
 
 class Solution {
 public:
-    bool flag = false;
-    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+    vector<vector<int>> levelOrderBottom(TreeNode* root) {
         if (!root) return {};
         vector<vector<int>> vvi {{root->val}};
         vector<int> vi;
@@ -41,22 +40,14 @@ public:
                 qt1.pop();
             }
             if(vi.size()>0){
-                if(flag){
-                    vvi.push_back(vi);
-                    flag = false;
-                }
-                else{
-                    reverse(vi.begin(),vi.end());
-                    vvi.push_back(vi);
-                    flag = true;
-                }
+                vvi.push_back(vi);
             }
             vi.clear();
         }
+        reverse(vvi.begin(),vvi.end());
         return vvi; 
     }
 };
-
 
 
 int main()
