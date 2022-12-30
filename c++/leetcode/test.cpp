@@ -14,8 +14,8 @@ int main()
     // cin>>t;
     while(t--){
         string str = "javatpoint";
-        char x = '1';  
-        str.push_back(x);
+        char y = '1';  
+        str.push_back(y);
         cout<<str;
     }
     return 0;
