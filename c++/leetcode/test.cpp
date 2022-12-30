@@ -13,10 +13,11 @@ int main()
     t = 1;
     // cin>>t;
     while(t--){
-        string str = "javatpoint";
-        char y = '1';  
-        str.push_back(y);
-        cout<<str;
+        // string str = "javatpoint";
+        // char y = '1';  
+        // str.push_back(y);
+        // cout<<str;
+        cout<<'b'-'a';
     }
     return 0;
 }
