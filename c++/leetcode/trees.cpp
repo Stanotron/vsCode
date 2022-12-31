@@ -9,54 +9,57 @@ using namespace std;
 
 //same tree
 
- struct Trienode{
-    Trienode *child[26];
+ struct Dictnode{
+    Dictnode * next[26];
     bool end = false;
 };
-
-Trienode * newnode(){
-    Trienode * temp = new Trienode();
-    temp->end = false;
+Dictnode *newnode(){
+    Dictnode *temp = new Dictnode();
     for(int i = 0; i<26; i++){
-        temp->child[i] = NULL;
+        temp->next[i] == NULL;
     }
+    temp->end = false;
     return temp;
 }
-Trienode * root = NULL;
-class Trie {
+Dictnode * root = NULL;
+class WordDictionary {
 public:
-    Trie() {
+    WordDictionary() {
         root = newnode();
-    } 
-
-    void insert(string word) {
-        int size = word.size();
-        Trienode * temp = root;
-        for(int i = 0; i<size; i++){
-            if(!temp->child[word[i]-'a']) temp->child[word[i]-'a'] = newnode();
-            temp = temp->child[word[i]-'a'];
+    }
+    
+    void addWord(string word) {
+        int s = word.size();
+        Dictnode * temp = root;
+        for(int i = 0; i<s; i++){
+            if(!temp->next[word[i]-'a']) temp->next[word[i]-'a'] = newnode(); 
+            temp = temp->next[word[i]-'a']; 
         }
         temp->end = true;
     }
     
-    bool search(string word) {
-        int size = word.size();
-        Trienode * temp = root;
-        for(int i = 0; i<size; i++){
-            if(!temp->child[word[i]-'a']) return false;
-            temp = temp->child[word[i]-'a'];
+    bool dfs(string word, int start,Dictnode *curr){
+        Dictnode *temp = curr;
+        int s = word.size();
+        for(int i = start; i<s; i++){
+            if(word[i]=='.'){
+                for(int j = 0; j<26; j++){
+                    if(temp->next[j]){
+                        if(dfs(word,i+1,temp->next[j])) return true;
+                    }
+                }
+                return false;
+            }
+            else{
+                if(!temp->next[word[i]-'a']) return false;
+                temp = temp->next[word[i]-'a']; 
+            } 
         }
         return temp->end;
     }
-    
-    bool startsWith(string prefix) {
-        int size = prefix.size();
-        Trienode * temp = root;
-        for(int i = 0; i<size; i++){
-            if(!temp->child[prefix[i]-'a']) return false;
-            temp = temp->child[prefix[i]-'a'];
-        }
-        return true;
+
+    bool search(string word) {
+        return dfs(word,0,root);
     }
 };
 
