@@ -9,46 +9,56 @@ using namespace std;
 
 //same tree
 
- struct TreeNode {
-      int val;
-      TreeNode *left;
-      TreeNode *right;
-      TreeNode() : val(0), left(nullptr), right(nullptr) {}
-      TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-  };
-
-class Solution {
-public:
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        if (!root) return {};
-        vector<vector<int>> vvi {{root->val}};
-        vector<int> vi;
-        queue<TreeNode *> qt1;
-        if(root) qt1.push(root);
-        while(!qt1.empty()){
-            int size = qt1.size();
-            for(int i = 0; i < size; i++){
-                if(qt1.front()->left){
-                    qt1.push(qt1.front()->left);
-                    vi.push_back(qt1.front()->left->val);
-                } 
-                if(qt1.front()->right){
-                    qt1.push(qt1.front()->right);
-                    vi.push_back(qt1.front()->right->val);
-                } 
-                qt1.pop();
-            }
-            if(vi.size()>0){
-                vvi.push_back(vi);
-            }
-            vi.clear();
-        }
-        reverse(vvi.begin(),vvi.end());
-        return vvi; 
-    }
+ struct Trienode{
+    Trienode *child[26];
+    bool end = false;
 };
 
+Trienode * newnode(){
+    Trienode * temp = new Trienode();
+    temp->end = false;
+    for(int i = 0; i<26; i++){
+        temp->child[i] = NULL;
+    }
+    return temp;
+}
+Trienode * root = NULL;
+class Trie {
+public:
+    Trie() {
+        root = newnode();
+    } 
+
+    void insert(string word) {
+        int size = word.size();
+        Trienode * temp = root;
+        for(int i = 0; i<size; i++){
+            if(!temp->child[word[i]-'a']) temp->child[word[i]-'a'] = newnode();
+            temp = temp->child[word[i]-'a'];
+        }
+        temp->end = true;
+    }
+    
+    bool search(string word) {
+        int size = word.size();
+        Trienode * temp = root;
+        for(int i = 0; i<size; i++){
+            if(!temp->child[word[i]-'a']) return false;
+            temp = temp->child[word[i]-'a'];
+        }
+        return temp->end;
+    }
+    
+    bool startsWith(string prefix) {
+        int size = prefix.size();
+        Trienode * temp = root;
+        for(int i = 0; i<size; i++){
+            if(!temp->child[prefix[i]-'a']) return false;
+            temp = temp->child[prefix[i]-'a'];
+        }
+        return true;
+    }
+};
 
 int main()
 {
