@@ -14,7 +14,7 @@ int main()
     t = 1;
     // cin>>t;
     while(t--){
-
+        cout<<-'a';
     }
     return 0;
 }
