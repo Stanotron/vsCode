@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
 public:
-    int diam = 1;
+    int diam = -1;
     int dfs(TreeNode* root){
         if(!root) return -1;
         int left = -1, right= -1;
