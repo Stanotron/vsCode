@@ -9,19 +9,21 @@ using namespace std;
 
 class Solution {
 public:
-    int diam = 1;
-    int dfs(TreeNode* root){
-        if(!root) return -1;
-        int left = -1, right= -1;
-        if(root->left) left = dfs(root->left);
-        if(root->right) right = dfs(root->right);
-        diam = max(diam,2+left+right);
-        return 1+max(left,right);
-    }
-    int diameterOfBinaryTree(TreeNode* root) {
+    int dfs(TreeNode* root,int max){
         if(!root) return 0;
-        dfs(root);
-        return diam;
+        int res = 0;
+        if(root->val >= max){
+            res += 1;
+            max = root->val; 
+        } 
+        res += dfs(root->left,max);
+        res += dfs(root->right,max);
+        return res;
+    }
+    int goodNodes(TreeNode* root) {
+        if(!root) return 0;
+        int res = dfs(root,root->val);
+        return res;   
     }
 };
 
