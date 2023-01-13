@@ -9,20 +9,30 @@ using namespace std;
 
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
-        if(root==NULL){
-            return 0;
+    set<vector<int>> vvi;
+    
+    void sol(vector<int>& nums,int i, vector<int>& res){
+        if(res.size()<=nums.size()){
+            vvi.insert(res);
         }
-        int out = 1+max(maxDepth(root->left),maxDepth(root->right));
-        return out;
-    }
-    bool isBalanced(TreeNode* root) {
-        if(!root) return true;
+        if(i>=nums.size()) return;
 
-        int left = maxDepth(root->left);
-        int right = maxDepth(root->right);
-        if(right>left+1 || left>right+1) return false;
-        return (isBalanced(root->left) && isBalanced(root->right));
+        res.push_back(nums[i]);
+        sol(nums,i+1,res);
+        res.pop_back();
+        sol(nums,i+1,res);
+    }
+
+    vector<vector<int>> subsetsWithDup(vector<int>& nums){
+        if(nums.size()==0) return {{}};
+        vector<int> res;
+        sort(nums.begin(),nums.end());
+        sol(nums,0,res);
+        vector<vector<int>> v;
+        for(auto x : vvi){
+            v.push_back(x);
+        }
+        return v;
     }
 };
 
