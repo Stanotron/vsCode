@@ -9,21 +9,20 @@ using namespace std;
 
 class Solution {
 public:
-    int dfs(TreeNode* root,int max){
-        if(!root) return 0;
-        int res = 0;
-        if(root->val >= max){
-            res += 1;
-            max = root->val; 
-        } 
-        res += dfs(root->left,max);
-        res += dfs(root->right,max);
-        return res;
+    int maxDepth(TreeNode* root) {
+        if(root==NULL){
+            return 0;
+        }
+        int out = 1+max(maxDepth(root->left),maxDepth(root->right));
+        return out;
     }
-    int goodNodes(TreeNode* root) {
-        if(!root) return 0;
-        int res = dfs(root,root->val);
-        return res;   
+    bool isBalanced(TreeNode* root) {
+        if(!root) return true;
+
+        int left = maxDepth(root->left);
+        int right = maxDepth(root->right);
+        if(right>left+1 || left>right+1) return false;
+        return (isBalanced(root->left) && isBalanced(root->right));
     }
 };
 
