@@ -9,30 +9,24 @@ using namespace std;
 
 class Solution {
 public:
-    set<vector<int>> vvi;
-    
-    void sol(vector<int>& nums,int i, vector<int>& res){
-        if(res.size()<=nums.size()){
-            vvi.insert(res);
-        }
-        if(i>=nums.size()) return;
 
-        res.push_back(nums[i]);
-        sol(nums,i+1,res);
-        res.pop_back();
-        sol(nums,i+1,res);
-    }
-
-    vector<vector<int>> subsetsWithDup(vector<int>& nums){
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> vvi;
         if(nums.size()==0) return {{}};
-        vector<int> res;
-        sort(nums.begin(),nums.end());
-        sol(nums,0,res);
-        vector<vector<int>> v;
-        for(auto x : vvi){
-            v.push_back(x);
+        if(nums.size()==1){
+            return {nums};
         }
-        return v;
+        for(int i = 0; i<nums.size(); i++){
+            int x = nums[0];
+            nums.erase(nums.begin());
+            vector<vector<int>> v = permute(nums);
+            for(auto y : v){
+                y.push_back(x);
+                vvi.push_back(y);
+            }
+            nums.push_back(x);
+        }
+        return vvi;
     }
 };
 
