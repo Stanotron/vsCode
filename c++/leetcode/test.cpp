@@ -9,34 +9,39 @@ using namespace std;
 
 class Solution {
 public:
-    bool ispalindrome(string str){
-        string x = str;
-        reverse(x.begin(),x.end());
-        return (x==str);
-    }
-    vector<vector<string>> vvi;
-    void dfs(string s, int pos, vector<string> & res){
-        if(pos==s.size()){
-            vvi.push_back(res);
+    vector<string> res;
+    
+    void dfs(vector<string> &digits, string &curr, int pos){
+        if(curr.size()==digits.size()){
+            res.push_back(curr);
             return;
-        } 
-        string str;
-        int size = 1;
-        for(int i = pos; i<s.size();i++){
-            str = s.substr(pos, size);
-            if(ispalindrome(str)){
-                res.push_back(str);
-                dfs(s,pos+size,res);
-                res.pop_back();
-            }
-            size++;
-        }   
+        }
+        string temp = digits[pos];
+        for(auto x : temp){
+            curr.push_back(x);
+            dfs(digits,curr,pos+1);
+            curr.pop_back();
+        }
     }
-    vector<vector<string>> partition(string s) {
-        if(s.size()==1) return {{s}};
-        vector<string> res;
-        dfs(s,0,res);
-        return vvi;
+
+    vector<string> letterCombinations(string digits) {
+        if(digits.size()==0) return {};
+        map<string,string> mis;
+        mis["2"] = "abc";
+        mis["3"] = "def";
+        mis["4"] = "ghi";
+        mis["5"] = "jkl";
+        mis["6"] = "mno";
+        mis["7"] = "pqrs";
+        mis["8"] = "tuv";
+        mis["9"] = "wxyz";
+        vector<string> l;
+        for(int i = 0; i<digits.size(); i++){
+            l.push_back(mis[digits.substr(i,1)]);
+        }
+        string curr;
+        dfs(l,curr,0);
+        return res;
     }
 };
 
