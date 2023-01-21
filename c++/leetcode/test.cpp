@@ -27,7 +27,7 @@ public:
     vector<string> letterCombinations(string digits) {
         if(digits.size()==0) return {};
         map<string,string> mis;
-        mis["2"] = "abc";
+        mis["1"] = "abc";
         mis["3"] = "def";
         mis["4"] = "ghi";
         mis["5"] = "jkl";
