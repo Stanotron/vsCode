@@ -30,6 +30,8 @@ int main()
             }
         }
     }
-    cout<<keys<<" "<<identifier;
+    bool a ;
+    cout<<a;
+    // cout<<keys<<" "<<identifier;
     return 0;
 }

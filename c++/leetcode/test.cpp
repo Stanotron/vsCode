@@ -9,48 +9,93 @@ using namespace std;
 
 class Solution {
 public:
-    void bfs(int x, int y,vector<vector<char>>& grid){
-        queue<pair<int,int>> vii;
-        vii.push({x,y});
-        while(vii.size()>0){
-            int i = vii.front().first, j = vii.front().second;
-            if(i<grid.size()-1 && j<grid[0].size()-1){
-                // cout<<i<<" "<<j<<"  ";
-                if(grid[i+1][j]=='1'){
-                    grid[i+1][j]='-1';
-                    vii.push({i+1,j});
-                }
-                if(grid[i][j+1]=='1'){
-                    grid[i][j+1]='-1';
-                    vii.push({i,j+1});
-                }
-            }
-            for(auto g : grid){
-                for(auto h : g){
-                    cout<<h<<" ";
-                }
-                cout<<endl;
-            }
-                cout<<endl;
-            vii.pop(); 
+    vector<vector<int>> vii;
+
+    bool checkPO(int i, int j, vector<vector<int>>& heights){
+        if(j==0 || i==0) return true;
+        int temp = heights[i][j];
+
+        heights[i][j] = INT_MAX; 
+        
+        if(temp>=heights[i-1][j]){
+            if(checkPO(i-1,j,heights)){
+                heights[i][j] = temp;
+                return true;
+            } 
         }
-        return;
+        if(temp>=heights[i][j-1]){
+            if(checkPO(i,j-1,heights)){
+                heights[i][j] = temp;
+
+                return true;
+            } 
+        }  
+        
+        if(j<heights[0].size()-1 && temp>=heights[i][j+1]){
+            if(checkPO(i,j+1,heights)){
+                heights[i][j] = temp;
+                return true;
+            } 
+        }
+        
+        if(i<heights.size()-1 && temp>=heights[i+1][j]){
+            if(checkPO(i+1,j,heights)){
+                heights[i][j] = temp;
+                return true;
+            }
+        }
+        heights[i][j] = temp;
+        return false;
     }
-    int numIslands(vector<vector<char>>& grid) {
-        if(grid.size()==0) return 0;
-        int sol = 0;
-        vector<pair<int,int>> vii;
-        for(int i = 0; i< grid.size(); i++){
-            for(int j = 0; j< grid[0].size(); j++){
-                if(grid[i][j]=='1'){
-                    grid[i][j]='-1';
-                    sol++;
-                    cout<<grid[i][j];
-                    bfs(i,j,grid);
-                }
+
+    bool checkAO(int i, int j, vector<vector<int>>& heights){
+        if(j==heights[0].size()-1 || i==heights.size()-1) return true;
+        
+        int temp = heights[i][j];
+        heights[i][j] = INT_MAX;
+        
+        if(temp>=heights[i+1][j]){
+           if(checkAO(i+1,j,heights)){
+                heights[i][j] = temp;
+                return true;
+           }  
+        } 
+
+        if(temp>=heights[i][j+1]){
+           if(checkAO(i,j+1,heights)){
+                heights[i][j] = temp;
+                return true;  
+           }  
+        }
+
+        if(i>0 && temp>=heights[i-1][j]){
+            if(checkAO(i-1,j,heights)){
+                heights[i][j] = temp;
+                return true;
+            } 
+        }
+        
+        if(j>0 && temp>=heights[i][j-1]){
+            if(checkAO(i,j-1,heights)){
+                heights[i][j] = temp;
+                return true;
+            } 
+        }
+        
+        heights[i][j] = temp;
+        return false;
+    }
+    vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
+        if(heights.size()==1 && heights[0].size()==1) return {{0,0}};
+        for(int i = 0; i<heights.size(); i++){
+            for(int j = 0; j<heights[0].size(); j++){
+                if(checkPO(i,j,heights) && checkAO(i,j,heights)){
+                    vii.push_back({i,j});
+                } 
             }
         }
-        return sol;
+        // cout<<checkAO(0,1,heights);
+        return vii;
     }
 };
 
