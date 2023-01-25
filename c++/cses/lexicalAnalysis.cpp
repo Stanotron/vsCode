@@ -17,7 +17,7 @@ int main()
     string temp ; 
     // cin>>t;
     while(t--){
-        string in = "for(int i = 0; i < 10; i++)";
+        string in = "for(int i = 1; i < 10; i++)";
         for(auto x : in){
             if((int(x)>64 && int(x)<91) || (int(x)>96 && int(x)<123)){
                 temp.push_back(x);
