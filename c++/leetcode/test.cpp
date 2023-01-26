@@ -9,49 +9,59 @@ using namespace std;
 
 class Solution {
 public:
-    int valid = true;
-    vector<pair<int,int>> vii;
-    void dfs(int i, int j, vector<vector<char>>& board){
-        if(i==board.size()-1 || j==board[0].size()-1 || i==0 || j==0){
-            if(board[i][j]=='O'){
-                valid = false;
-            } 
-            return;
-        }
+    int count = 0;
+    void sol(vector<vector<int>> & grid, queue<pair<int,int>> &q){
+        if(q.empty()) return; 
 
-        if(board[i][j]=='O'){
-            cout<<i<<" "<<j<<endl;
-            board[i][j]='X';
-            vii.emplace_back(i,j);
-            if(valid) dfs(i,j+1,board);
-            if(valid) dfs(i,j-1,board);
-            if(valid) dfs(i+1,j,board);
-            if(valid) dfs(i-1,j,board);
+        bool flag = false;
+        int  r = grid.size(), c = grid[0].size(), a = q.size();
+        cout<<a<<" ";
+        for(int i = 0; i<a; i++){
+            int x = q.front().first, y = q.front().second;
+            if(y+1<c && grid[x][y+1]==1){
+                grid[x][y+1]=2;
+                q.push({x,y+1});
+                flag = true;
+            }
+            if(y-1>=0 && grid[x][y-1]==1){
+                grid[x][y-1]=2;
+                q.push({x,y-1});
+                flag = true;
+            }
+            if(x+1<r && grid[x+1][y]==1){
+                grid[x+1][y]=2;
+                q.push({x+1,y});
+                flag = true;
+            }
+            if(x-1>=0 && grid[x-1][y]==1){
+                grid[x-1][y]=2;
+                q.push({x-1,y});
+                flag = true;
+            }
+            q.pop();  
         }
-        if(!valid){
-            board[i][j] = 'O';
-        } 
-        return;   
+        if (flag) count++;
+        sol(grid,q);
     }
 
-    void solve(vector<vector<char>>& board) {
-        if(board.size()==1 && board[0].size()==1) return;
-
-        for(int i = 1; i<board.size()-1; i++){
-            for(int j = 1; j<board[0].size()-1; j++){
-                if(board[i][j]=='O'){
-                    dfs(i,j,board);
-                    if(!valid && !vii.empty()){
-                        for(auto c : vii){
-                            board[c.first][c.second]='O';
-                        }
-                    }
-                    vii.clear();
-                    valid = true;
-                }  
+    int orangesRotting(vector<vector<int>>& grid) {
+        queue<pair<int,int>> q;
+        for(int i =0; i<grid.size(); i++){
+            for(int j = 0; j<grid[0].size();j++){
+                if(grid[i][j]==2){
+                    q.push({i,j});
+                }
             }
         }
-        return;
+        sol(grid,q);
+        for(int i =0; i<grid.size(); i++){
+            for(int j = 0; j<grid[0].size();j++){
+                if(grid[i][j]==1){
+                    return -1;
+                }
+            }
+        }
+        return count;
     }
 };
 
