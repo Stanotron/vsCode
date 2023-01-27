@@ -13,7 +13,7 @@ public:
     void sol(vector<vector<int>> & grid, queue<pair<int,int>> &q){
         if(q.empty()) return; 
 
-        bool flag = false;
+        bool flag = true;
         int  r = grid.size(), c = grid[0].size(), a = q.size();
         cout<<a<<" ";
         for(int i = 0; i<a; i++){
