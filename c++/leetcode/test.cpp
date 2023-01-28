@@ -9,59 +9,35 @@ using namespace std;
 
 class Solution {
 public:
-    int count = 0;
-    void sol(vector<vector<int>> & grid, queue<pair<int,int>> &q){
-        if(q.empty()) return; 
-
-        bool flag = true;
-        int  r = grid.size(), c = grid[0].size(), a = q.size();
-        cout<<a<<" ";
-        for(int i = 0; i<a; i++){
-            int x = q.front().first, y = q.front().second;
-            if(y+1<c && grid[x][y+1]==1){
-                grid[x][y+1]=2;
-                q.push({x,y+1});
-                flag = true;
-            }
-            if(y-1>=0 && grid[x][y-1]==1){
-                grid[x][y-1]=2;
-                q.push({x,y-1});
-                flag = true;
-            }
-            if(x+1<r && grid[x+1][y]==1){
-                grid[x+1][y]=2;
-                q.push({x+1,y});
-                flag = true;
-            }
-            if(x-1>=0 && grid[x-1][y]==1){
-                grid[x-1][y]=2;
-                q.push({x-1,y});
-                flag = true;
-            }
-            q.pop();  
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<int> vi(numCourses),sol; int n = numCourses;
+        // if(prerequisites.size() == 0){
+        //     for(int i = numCourses; i>=0; i--) cout<<i<<" ";
+        // }
+        queue<int> q;
+        vector<vector<int>> graph(numCourses,vector<int>(numCourses, 0)); 
+        for(auto x : prerequisites){
+            vi[x[0]]+=1;
+            graph[x[1]][x[0]] = 1;
         }
-        if (flag) count++;
-        sol(grid,q);
-    }
-
-    int orangesRotting(vector<vector<int>>& grid) {
-        queue<pair<int,int>> q;
-        for(int i =0; i<grid.size(); i++){
-            for(int j = 0; j<grid[0].size();j++){
-                if(grid[i][j]==2){
-                    q.push({i,j});
-                }
+        for(int i = 0; i<numCourses; i++){
+            if(vi[i]==0) q.push(i);
+        }
+        if(q.empty()) return {};
+        while(!q.empty()){
+            int curr = q.front();
+            q.pop();
+            sol.push_back(curr);
+            numCourses--;
+            for(int x = 0; x<n; x++){
+                if(graph[curr][x]==1){
+                    vi[x]-=1;
+                    if(vi[x]==0) q.push(x);
+                } 
             }
         }
-        sol(grid,q);
-        for(int i =0; i<grid.size(); i++){
-            for(int j = 0; j<grid[0].size();j++){
-                if(grid[i][j]==1){
-                    return -1;
-                }
-            }
-        }
-        return count;
+        if(numCourses!=0) return {};
+        else return sol;
     }
 };
 
