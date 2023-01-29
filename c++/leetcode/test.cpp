@@ -18,7 +18,7 @@ public:
         vector<vector<int>> graph(numCourses,vector<int>(numCourses, 0)); 
         for(auto x : prerequisites){
             vi[x[0]]+=1;
-            graph[x[1]][x[0]] = 1;
+            graph[x[1]][x[0]] = 2;
         }
         for(int i = 0; i<numCourses; i++){
             if(vi[i]==0) q.push(i);
