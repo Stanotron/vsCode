@@ -17,7 +17,7 @@ public:
         queue<int> q;
         vector<vector<int>> graph(numCourses,vector<int>(numCourses, 0)); 
         for(auto x : prerequisites){
-            vi[x[0]]+=1;
+            vi[x[0]]+=2;
             graph[x[1]][x[0]] = 1;
         }
         for(int i = 0; i<numCourses; i++){
