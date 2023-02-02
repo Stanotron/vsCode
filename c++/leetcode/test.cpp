@@ -9,35 +9,30 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
-        vector<int> vi(numCourses),sol; int n = numCourses;
-        // if(prerequisites.size() == 0){
-        //     for(int i = numCourses; i>=0; i--) cout<<i<<" ";
-        // }
-        queue<int> q;
-        vector<vector<int>> graph(numCourses,vector<int>(numCourses, 0)); 
-        for(auto x : prerequisites){
-            vi[x[0]]+=2;
-            graph[x[1]][x[0]] = 1;
-        }
-        for(int i = 0; i<numCourses; i++){
-            if(vi[i]==0) q.push(i);
-        }
-        if(q.empty()) return {};
+    int ladderLength(string beginword, string endword, vector<string>& wordlist) {
+        if(find(wordlist.begin(),wordlist.end(),endword)==wordlist.end()) return 0;
+        queue<pair<int,string>> q; set<string> s;
+        for(auto c : wordlist) s.insert(c);
+        q.push({1,beginword}); 
         while(!q.empty()){
-            int curr = q.front();
+            string t = q.front().second; int sol = q.front().first;  
             q.pop();
-            sol.push_back(curr);
-            numCourses--;
-            for(int x = 0; x<n; x++){
-                if(graph[curr][x]==1){
-                    vi[x]-=1;
-                    if(vi[x]==0) q.push(x);
-                } 
+            for(int i = 0; i<t.size(); i++){
+                char temp = t[i];
+                for(char c = 'a'; c<='z'; c++){
+                    t[i] = c;
+                    auto rem = s.find(t); 
+                    if(t==endword) return sol+1;
+                    else if(rem != s.end()){
+                        // cout<<" inserted"<<t<<" ";
+                        s.erase(*rem);
+                        q.push({sol+1,t});
+                    } 
+                }
+                t[i] = temp;
             }
         }
-        if(numCourses!=0) return {};
-        else return sol;
+        return 0;
     }
 };
 
