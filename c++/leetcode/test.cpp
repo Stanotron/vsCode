@@ -13,7 +13,7 @@ public:
         if(find(wordlist.begin(),wordlist.end(),endword)==wordlist.end()) return 0;
         queue<pair<int,string>> q; set<string> s;
         for(auto c : wordlist) s.insert(c);
-        q.push({1,beginword}); 
+        q.push({2,beginword}); 
         while(!q.empty()){
             string t = q.front().second; int sol = q.front().first;  
             q.pop();
