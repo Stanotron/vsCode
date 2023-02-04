@@ -13,7 +13,7 @@ int main()
     t = 1;
     // cin>>t;
     while(t--){
-    
+        
     }
     return 0;
 }
