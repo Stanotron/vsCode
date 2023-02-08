@@ -21,7 +21,7 @@ int main()
 {
     fast_io;
     ll t;
-    t = 2;
+    t = 1;
     // cin>>t;
     while(t--){
         vector<int> wt {10,20,30}, val{60,100,120};
