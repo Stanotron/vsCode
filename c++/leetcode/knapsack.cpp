@@ -7,7 +7,7 @@
     
 using namespace std;
 
-int dp[101][1002];
+int dp[102][1002];
 
 int knapsack(vector<int> & wt, vector<int> & val , int w, int n ){
     if(n==0 || w==0 ) return 0;
