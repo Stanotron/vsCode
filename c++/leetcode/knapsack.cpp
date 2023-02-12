@@ -27,7 +27,7 @@ int main()
     ll t;
     t = 1;
     // cin>>t;
-    memset(dp,-1,sizeof(dp));
+    memset(dp,-2,sizeof(dp));
     while(t--){
         vector<int> wt {10,20,30}, val{60,100,120};
         int w = 50;
