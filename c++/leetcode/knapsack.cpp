@@ -9,9 +9,22 @@ using namespace std;
 
 int dp[102][1002];
 
-// int knapsack2(vector<int> & wt, vector<int> & val , int w, int n ){
-
-// }
+int knapsack2(vector<int> & wt, vector<int> & val , int w, int n ){
+    int sol[n+1][w+1];
+    memset(sol,-1,sizeof(sol));
+    fr(i,0,n+1){
+        fr(j,0,w+1){
+            if(i==0 || j==0) sol[i][j] = 0;
+            else if(wt[i-1]<=j){
+                sol[i][j] = max(sol[i-1][j], val[i-1] + sol[i-1][j-wt[i-1]]);
+            }
+            else{
+                sol[i][j] = sol[i-1][j];
+            }
+        }
+    }
+    return sol[n][w];
+}
 
 int knapsack(vector<int> & wt, vector<int> & val , int w, int n){
     if(n==0 || w==0 ) return 0;
@@ -35,8 +48,7 @@ int main()
     while(t--){
         vector<int> wt {30,10,40,20}, val{10,20,30,40};
         int w = 40;
-        int out = knapsack(wt,val,w,4);
-        cout<<out;
-    }
+        cout<<knapsack(wt,val,w,4)<<" "<< knapsack2(wt,val,w,4);
+    }   
     return 0;
 }
