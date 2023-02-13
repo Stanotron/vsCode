@@ -48,7 +48,8 @@ int main()
     while(t--){
         vector<int> wt {30,10,40,20}, val{10,20,30,40};
         int w = 40;
-        cout<<knapsack(wt,val,w,4)<<" "<< knapsack2(wt,val,w,4);
+        cout<<knapsack(wt,val,w,4)<<" "<< knapsack2(wt,val,w,4)<<endl;
+        cout<<-2*-1;
     }   
     return 0;
 }
