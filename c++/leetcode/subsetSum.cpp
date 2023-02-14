@@ -23,7 +23,7 @@ using namespace std;
 //     return sol[size][sum];
 // }
 
-int dp[102][1002];
+int dp[101][1002];
 
 int subset(int arr[], int sum, int n){
     if(sum==0 || n==0) return 0;
