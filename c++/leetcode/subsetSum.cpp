@@ -25,14 +25,13 @@ using namespace std;
 
 int subset(int arr[], int sum, int size){
     int sol[size+1][sum+1];
-    fr(i,0,size+1){
-        fr(j,0,sum+1){
-            if(i==0) sol[i][j] = 0;
-            if(j==0) sol[i][j] = 1;
-
-            if(arr[i-1]<j){
-                sol[i][j] = sol[i-1][j] + sol[i-1][j - arr[i-1]];
-            }
+    fr(k,0,sum+1){
+        sol[0][k] = 0;
+        if(k<size+1) sol[k][0] = 1;
+    }
+    fr(i,1,size+1){
+        fr(j,1,sum+1){
+            if(arr[i-1]<=j) sol[i][j] = sol[i-1][j] + sol[i-1][j - arr[i-1]];
             else sol[i][j] = sol[i-1][j];
         }
     }
@@ -60,7 +59,7 @@ int main()
     // cin>>t;
     while(t--){
         // memset(dp,-1,sizeof(dp));
-        int arr[5] {2,3,5,8,10}, sum = 10;
+        int arr[5] = {2,3,5,8,10}, sum = 10;
         cout<<subset(arr,sum,5);
     }
     return 0;
