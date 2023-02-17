@@ -56,6 +56,17 @@ int subset3(int arr[], int sum, int size){
     return sol[size][sum];
 }
 
+int minsubdiff(int arr[], int total, int n){
+    
+    fr(i,0,total){
+        int sol[n+1][total+1];
+        fr(k,0,total+1){
+            sol[0][k] = 0;
+            if(k<n+1) sol[k][0] = 1;
+        }
+    }
+}
+
 
 
 int main()
@@ -66,8 +77,8 @@ int main()
     // cin>>t;
     while(t--){
         memset(dp,-1,sizeof(dp));
-        int arr[5] = {2,3,5,8,10}, sum = 10;
-        
+        int arr[5] = {2,3,5,8,10}, sum = 28;
+        minsubdiff(arr,sum,5);
     }
     return 0;
 }
