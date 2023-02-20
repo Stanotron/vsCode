@@ -77,7 +77,7 @@ int main()
     // cin>>t;
     while(t--){
         memset(dp,-1,sizeof(dp));
-        int arr[5] = {2,3,4,8,10}, sum = 27;
+        int arr[5] = {2,3,5,8,10}, sum = 28;
         minsubdiff(arr,sum,5);
     }
     return 0;
