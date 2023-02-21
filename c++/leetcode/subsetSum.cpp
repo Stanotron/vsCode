@@ -65,14 +65,13 @@ int main()
     // cin>>t;
     while(t--){
         memset(dp,-1,sizeof(dp));
-        int arr[5] = {1,4,5,8,10}, sum = 28;
-        cout<<subset(arr,12,5);
-        // for(int i = 14; i>=0; i--){
-        //     if(subset(arr,i,5)){
-        //         cout<<sum-(2*i);
-        //         break;
-        //     } 
-        // }
+        int arr[4] = {1, 6, 11, 9},sum = 27;
+        for(int i = 14; i>=0; i--){
+            if(subset3(arr,i,5)>0){
+                cout<<abs(sum-(2*i));
+                break;
+            } 
+        }
     }
     return 0;
 }
