@@ -7,24 +7,6 @@
     
 using namespace std;
 
-//iterative approach
-
-bool subset(int arr[], int sum, int size){
-    int sol[size+1][sum+1];
-    fr(i,0,size+1){
-        fr(j,0,sum+1){
-            if(i==0) sol[i][j] = false;
-            if(j==0) sol[i][j] = true;
-
-            if(arr[i-1]<j){
-                sol[i][j] = (sol[i-1][j] || sol[i-1][j - arr[i-1]]);
-            }
-            else sol[i][j] = sol[i-1][j];
-        }
-    }
-    return sol[size][sum];
-}
-
 // recursion and memoization
 
 int dp[102][1002];
@@ -56,6 +38,24 @@ int subset3(int arr[], int sum, int size){
     return sol[size][sum];
 }
 
+//iterative approach
+
+bool subset(int arr[], int sum, int size){
+    int sol[size+1][sum+1];
+    fr(i,0,size+1){
+        fr(j,0,sum+1){
+            if(i==0) sol[i][j] = false;
+            if(j==0) sol[i][j] = true;
+
+            if(arr[i-1]<j){
+                sol[i][j] = (sol[i-1][j] || sol[i-1][j - arr[i-1]]);
+            }
+            else sol[i][j] = sol[i-1][j];
+        }
+    }
+    if(sol[size][sum]) return true;
+    else return false;
+}
 
 int main()
 {
@@ -65,8 +65,8 @@ int main()
     // cin>>t;
     while(t--){
         memset(dp,-1,sizeof(dp));
-        int arr[5] = {2,4,5,8,10}, sum = 29;
-        cout<<subset(arr,17,5);
+        int arr[5] = {1,4,5,8,10}, sum = 28;
+        cout<<subset(arr,12,5);
         // for(int i = 14; i>=0; i--){
         //     if(subset(arr,i,5)){
         //         cout<<sum-(2*i);
