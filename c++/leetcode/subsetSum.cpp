@@ -65,7 +65,7 @@ int main()
     // cin>>t;
     while(t--){
         memset(dp,-1,sizeof(dp));
-        int arr[4] = {1, 6, 11, 9},sum = 27;
+        int arr[4] = {2, 6, 11, 9},sum = 28;
         for(int i = 14; i>=0; i--){
             if(subset3(arr,i,5)>0){
                 cout<<abs(sum-(2*i));
