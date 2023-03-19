@@ -57,6 +57,24 @@ bool subset(int arr[], int sum, int size){
     else return false;
 }
 
+int numofsubsetwithgivendiff(int arr[],int sum, int diff, int size){
+    int target = (sum + diff)/2;
+    int sol[target+1][size+1];
+    fr(i,0,target+1){
+        sol[0][i]=0;
+        if(i<sum+1) sol[i][0] = 1;
+    }
+    for(int i = 0; i <target+1; i++){
+        for(int j = 0; j<size+1; j++){            
+            if(arr[i-1]<=j){
+                sol[i][j] = sol[i-1][j] + sol[i-1][j-arr[i-1]];
+            }
+            else sol[i][j] = sol[i-1][j]; 
+        } 
+    }
+    return sol[size][target];
+}
+
 int main()
 {
     fast_io;
@@ -64,14 +82,16 @@ int main()
     t = 2;
     // cin>>t;
     while(t--){
-        memset(dp,-1,sizeof(dp));
-        int arr[4] = {2, 6, 11, 9},sum = 28;
-        for(int i = 14; i>=0; i--){
-            if(subset3(arr,i,5)>0){
-                cout<<abs(sum-(2*i));
-                break;
-            } 
-        }
+        // memset(dp,-1,sizeof(dp));
+        // int arr[4] = {2, 6, 11, 9},sum = 28;
+        // for(int i = 14; i>=0; i--){
+        //     if(subset3(arr,i,5)>0){
+        //         cout<<abs(sum-(2*i));
+        //         break;
+        //     } 
+        // }
+        int arr2[4] = {1,2,1,3}, diff = 1;
+        cout<<numofsubsetwithgivendiff(arr2,7,1,4);
     }
     return 0;
 }
