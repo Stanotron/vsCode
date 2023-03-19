@@ -64,8 +64,8 @@ int numofsubsetwithgivendiff(int arr[],int sum, int diff, int size){
         sol[0][i]=0;
         if(i<sum+1) sol[i][0] = 1;
     }
-    for(int i = 0; i <target+1; i++){
-        for(int j = 0; j<size+1; j++){            
+    for(int i = 1; i <target+1; i++){
+        for(int j = 1; j<size+1; j++){            
             if(arr[i-1]<=j){
                 sol[i][j] = sol[i-1][j] + sol[i-1][j-arr[i-1]];
             }
