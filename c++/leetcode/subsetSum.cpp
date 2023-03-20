@@ -77,7 +77,7 @@ int numofsubsetwithgivendiff(int arr[],int sum, int diff, int size){
 
 int main()
 {
-    fast_io;
+    fast_io;     
     ll t;
     t = 1;
     // cin>>t;
