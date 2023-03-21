@@ -29,6 +29,8 @@
 
 # print("integer type conversion :" , int(sum(numbers)))
 
+# minimax
+
 import math
 
 def minimax (curDepth, nodeIndex, maxTurn, scores,targetDepth) :
