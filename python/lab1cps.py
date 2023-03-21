@@ -46,5 +46,5 @@ nodeIndex*2+1,True,scores,targetDepth))
 scores=[-1,4,2,6,-3,-5,0,7]
 treeDepth=math.log(len(scores),2)
 
-print("Optimal value is : ",end=" ")
+print("Optimal value is :",end=" ")
 print(minimax(0,0,True,scores,treeDepth))
