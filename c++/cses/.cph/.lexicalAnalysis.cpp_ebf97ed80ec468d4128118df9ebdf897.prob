@@ -1,0 +1,1 @@
+{"name":"Local: lexicalAnalysis","url":"e:\\vs code\\c++\\cses\\lexicalAnalysis.cpp","tests":[{"id":1679392366199,"input":"A->Aad/b/c","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\cses\\lexicalAnalysis.cpp","group":"local","local":true}
