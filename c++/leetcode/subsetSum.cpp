@@ -84,14 +84,16 @@ int main()
     while(t--){
         memset(dp,-1,sizeof(dp));
         int arr[4] = {2, 6, 11, 9},sum = 28;
-        for(int i = 14; i>=0; i--){
-            if(subset3(arr,i,5)>0){
-                cout<<abs(sum-(2*i));
-                break;
-            } 
-        }
+        // for(int i = 14; i>=0; i--){
+        //     if(subset3(arr,i,5)>0){
+        //         cout<<abs(sum-(2*i));
+        //         break;
+        //     } 
+        // }
         int arr2[4] = {1,2,1,3}, diff = 1;
+        int arr3[9] = {0,0,0,0,0,0,0,0,1};
         cout<<numofsubsetwithgivendiff(arr2,7,1,4);
+        cout<<endl<<subset3(arr3,1,9);
     }
     return 0;
 }
