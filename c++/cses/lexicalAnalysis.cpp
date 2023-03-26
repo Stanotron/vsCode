@@ -39,7 +39,7 @@ void leftrecursion(string in){
         }
         cout<<endl;
         cout<<extra<<"->";
-        cout<<out<<"/Ep";
+        cout<<out<<"/E";
     }
     else return;
 }
