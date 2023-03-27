@@ -55,9 +55,17 @@ int main()
     string temp ; 
     // cin>>t;
     while(t--){
-        string in;
-        getline(cin,in);
-        leftrecursion(in);
+        // string in;
+        // getline(cin,in);
+        // leftrecursion(in);
+        long long n=1;
+        vector<long long> dp;
+        fr(i,1,10){
+            n = n*i;
+            dp.push_back(n);
+        }
+        for(auto x : dp) cout<<x<<" ";
+        cout<<dp[8]/(dp[4]*dp[3]);
         // string in = "for(int i = 1; i < 10; i++)";
         // for(auto x : in){
         //     if((int(x)>64 && int(x)<91) || (int(x)>96 && int(x)<123)){
