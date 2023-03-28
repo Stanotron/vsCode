@@ -65,7 +65,7 @@ int main()
             dp.push_back(n);
         }
         for(auto x : dp) cout<<x<<" ";
-        cout<<dp[8]/(dp[4]*dp[3]);
+        cout<<dp[8]/(dp[4]*dp[3 ]);
         // string in = "for(int i = 1; i < 10; i++)";
         // for(auto x : in){
         //     if((int(x)>64 && int(x)<91) || (int(x)>96 && int(x)<123)){
