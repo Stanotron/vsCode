@@ -79,6 +79,6 @@ int main()
         //     }
         // }
     }
-    // cout<<keys<<" "<<identifier;
+    cout<<keys<<" "<<identifier;
     return 0;
 }
