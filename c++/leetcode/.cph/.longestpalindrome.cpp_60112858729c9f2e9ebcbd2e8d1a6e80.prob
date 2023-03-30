@@ -1,0 +1,1 @@
+{"name":"Local: longestpalindrome","url":"e:\\vs code\\c++\\leetcode\\longestpalindrome.cpp","tests":[{"id":1680185980921,"input":"dababfg","output":"aba"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\leetcode\\longestpalindrome.cpp","group":"local","local":true}
