@@ -8,36 +8,40 @@
 using namespace std;
 
 string palindrome(string s){
-    string a = s,d;
+     string a = s,d;
     reverse(a.begin(), a.end());
     int size = s.length(), dp[size+1][size+1];
+    if(size==1) return s;
     int max = 0,x=0,y=0;
-    fr(i,0,size+1){
-        fr(j,0,size+1){
+    for(int i = 0; i<size+1; i++){
+        for(int j=0; j<size+1; j++){
             if(i==0 || j==0) dp[i][j] = 0;
-
             else if(s[i-1]==a[j-1]){
                 dp[i][j] = 1+dp[i-1][j-1];
             }
-
             else dp[i][j] = 0;
-
             if(dp[i][j]>max){
-                x = i;
-                y = j;
+                x = i; y = j;
                 max = dp[i][j];
             } 
         }
     }
-    while(x>=0 && y>=0){
-        if(dp[x][y]==1+dp[x-1][y-1]){
-            d.push_back(s[x]);
-            x-=1;
-            y-=1;
-        } 
-        else if(dp[x-1][y]>=dp[x][y-1]) x -=1;
-        
-        else y-=1;
+    cout<<max<<endl;
+    if(max==1){
+        d.push_back(s[0]);
+    } 
+    else{
+        while(x>0 && y>0){
+            if(s[x-1]==a[y-1]){
+                cout<<x<<" "<<y<<endl;
+                d.push_back(s[x-1]);
+                x--; y--;
+            }
+            else{
+                if(dp[x-1][y]>dp[x][y-1]) x--;
+                else y--;
+            } 
+        }
     }
     return d;
 }
