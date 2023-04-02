@@ -16,7 +16,7 @@ string palindrome(string s){
         fr(j,0,size+1){
             if(i==0 || j==0) dp[i][j] = 0;
 
-            else if(s[i]==a[j]){
+            else if(s[i-1]==a[j-1]){
                 dp[i][j] = 1+dp[i-1][j-1];
             }
 
