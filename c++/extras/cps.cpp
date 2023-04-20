@@ -28,7 +28,7 @@ int main()
 {
     fast_io;
     ll t;
-    t = 1;
+    t = 2;
     // cin>>t;
     while(t--){
         //Q1
