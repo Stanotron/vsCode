@@ -67,7 +67,7 @@ int main()
   // Iterate through the map and print the elements
   while (it != map.end())
   {
-    std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+    std::cout << "Key: " << (it->first)*2 << ", Value: " << it->second << std::endl;
     ++it;
   }
  
