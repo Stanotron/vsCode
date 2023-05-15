@@ -22,7 +22,6 @@ def steps(n,m,d,js,jb):
             jb = jb+js
             js = 0
             count+=1
-
     return count
         
 def minsteps(n,m,d):
@@ -35,7 +34,6 @@ def minsteps(n,m,d):
         print("no sol")
     
     else:
-        # return (min(steps(n,m,d,0,0),steps(m,n,d,0,0)))  
         return steps(n,m,d,0,0)
     
 if __name__ == '__main__':
