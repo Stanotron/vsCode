@@ -1,0 +1,1 @@
+{"name":"Local: nqueens","url":"e:\\vs code\\python\\ai\\nqueens.py","tests":[{"id":1684160559554,"input":"","output":"[['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']]"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\python\\ai\\nqueens.py","group":"local","local":true}
