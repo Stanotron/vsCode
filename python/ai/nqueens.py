@@ -3,13 +3,12 @@ def nqueen (n : int) -> list[list[str]]:
     posdiag = set()
     negdiag = set()
 
-    board = [['.']*n for i in range(n)]
     res = []
+    board = [['.']*n for i in range(n)]
     
     def backtrack(r):
         if r==n:
             temp = ["".join(row) for row in board]
-            # print(temp)
             res.append(temp)
             return
 
