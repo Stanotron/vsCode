@@ -1,0 +1,1 @@
+{"name":"Local: quadruple","url":"e:\\vs code\\c++\\extras\\quadruple.cpp","tests":[{"id":1684267508157,"input":"x=a+b*c","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\extras\\quadruple.cpp","group":"local","local":true}
