@@ -1,0 +1,1 @@
+{"name":"Local: evalExp","url":"e:\\vs code\\c++\\leetcode\\evalExp.cpp","tests":[{"id":1686340298702,"input":"T^T^F","output":"0"},{"id":1686340378031,"input":"T|F","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vs code\\c++\\leetcode\\evalExp.cpp","group":"local","local":true}

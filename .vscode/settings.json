@@ -14,5 +14,6 @@
         "regex": "cpp",
         "valarray": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "cph.general.onceMaintainerMessage": false
 }
