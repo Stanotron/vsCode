@@ -7,7 +7,7 @@
     
 using namespace std;
 
-int dp[1001][1001];
+int dp[151][151];
 
 int solve(string & in, int i, int j, bool req){
     if(i>j) return 0;
@@ -59,3 +59,6 @@ int main()
     }
     return 0;
 }
+
+
+
