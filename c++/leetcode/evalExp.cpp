@@ -55,7 +55,7 @@ int main()
         string in;
         getline(cin,in);
         memset(dp,-1,sizeof(dp));
-        cout<<evaluate(in);
+        cout<<evaluate(in);   
     }
     return 0;
 }
