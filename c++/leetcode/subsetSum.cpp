@@ -95,7 +95,7 @@ int main()
         string s = "aaacecaaa";
         string sr = "aaacecaaa";
 
-        for(auto c : s) cout<<c<<" ";
+        for(auto c : s) cout<<c<<" ";       
     }
     return 0;
 }
