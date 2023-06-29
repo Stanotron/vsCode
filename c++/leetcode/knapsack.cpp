@@ -42,7 +42,7 @@ int main()
 {
     fast_io;
     ll t;
-    t = 1;
+    t = 2;
     // cin>>t;
     memset(dp,-1,sizeof(dp));
     while(t--){
