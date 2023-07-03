@@ -42,14 +42,20 @@ int main()
 {
     fast_io;
     ll t;
-    t = 2;
+    t = 1;
     // cin>>t;
     memset(dp,-1,sizeof(dp));
     while(t--){
-        vector<int> wt {30,10,40,20}, val{10,20,30,40};
-        int w = 40;
-        cout<<knapsack(wt,val,w,4)<<" "<< knapsack2(wt,val,w,4)<<endl;
-        cout<<-2*-1;
+        // vector<int> wt {30,10,40,20}, val{10,20,30,40};
+        // int w = 40;
+        // cout<<knapsack(wt,val,w,4)<<" "<< knapsack2(wt,val,w,4)<<endl;
+        // cout<<-2*-1;
+        int i  = 3;
+        while(i--) cout<<i;        
+        vector<char> vc  {'D','C','B'};
+        sort(vc.begin(),vc.end());
+        for(auto x : vc) cout<<x<<" ";
+
     }   
     return 0;
 }
