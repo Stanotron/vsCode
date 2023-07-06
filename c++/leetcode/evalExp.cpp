@@ -56,11 +56,6 @@ int main()
         getline(cin,in);
         memset(dp,-1,sizeof(dp));
         cout<<evaluate(in);   
-        int i;
-        for(i = 0; i<5; i++){
-            cout<<"ok";
-        }
-        cout<<endl<<i;
     }
     return 0;
 }
