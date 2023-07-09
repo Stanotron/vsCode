@@ -56,7 +56,6 @@ int main()
         getline(cin,in);
         memset(dp,-1,sizeof(dp));
         cout<<evaluate(in);   
-       cout<<min(1,3);
     }
     return 0;
 }
