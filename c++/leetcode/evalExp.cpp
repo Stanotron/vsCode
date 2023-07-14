@@ -50,16 +50,12 @@ int main()
     fast_io;
     ll t;
     t = 2;
-    // cin>>t;
-    // while(t--){
-    //     string in;
-    //     getline(cin,in);
-    //     memset(dp,-1,sizeof(dp));
-    //     cout<<evaluate(in);   
-    // }
-    int o = 999;
-    for(auto x : o){
-        cout<<x<<" ";
+    cin>>t;
+    while(t--){
+        string in;
+        getline(cin,in);
+        memset(dp,-1,sizeof(dp));
+        cout<<evaluate(in);   
     }
     return 0;
 }
