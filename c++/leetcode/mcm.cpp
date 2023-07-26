@@ -26,7 +26,7 @@ int main()
 {
     fast_io;
     ll t;
-    t = 1;
+    t = 1\2;
     // cin>>t;
     while(t--){
         vector<int> vi {40,20,30,10,30};
