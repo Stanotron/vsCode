@@ -5,34 +5,38 @@
 #define ll long long
 #define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL)
 
-struct node{
-    int val;
-    node * next;
-};
+ #include <stdio.h>
 
-node * start = NULL;
+test(x,y)
 
+int x,y;
 
-int del(int k, node * head){
-    if(head==NULL) return 0;
+{
 
-    
-    node * temp =  head;
-    node * temp1 = head;
+return(x= (x!=y) );
 
-    while(k--){
-        temp1 = temp1->next;
-        if(temp1==NULL && k>0) return 0;
-    }
-    
+}
+int main()
 
-    while(temp1->next!=NULL){
-        temp = temp->next;
-        temp1 = temp1->next;
-    }
+8. {
 
+9. int process(), test();
 
-}    
+10. printf("The Result is: %d\n", process (test,3,6));
+
+11. }
+
+12. process (pf, vall, val2)
+
+13. int (*pf) ();
+
+14. int vall, val2;
+
+15. {
+
+16. return((*pf) (val1, val2));
+
+17. } 
 
 using namespace std;
 int main()
