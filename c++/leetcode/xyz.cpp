@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-    int N, x;
-    cin >> N;
+    int y, x;
+    cin >> y;
     cin >> x;
 
     int count = 0;
