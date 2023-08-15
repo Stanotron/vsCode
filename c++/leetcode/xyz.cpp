@@ -2,9 +2,9 @@
 using namespace std;
 
 int main() {
-    int N, d;
+    int N, x;
     cin >> N;
-    cin >> d;
+    cin >> x;
 
     int count = 0;
     int currentSum = 0;
