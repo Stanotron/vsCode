@@ -2,9 +2,10 @@
 using namespace std;
 
 int main() {
-    int y, x;
-    cin >> y;
-    cin >> x;
+    int i;
+    int K, N;
+    cin >> N;
+    cin >> K;
 
     int count = 0;
     int currentSum = 0;
